@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 export default function AddUser() {
 
-        let navigate = useNavigate()
+    let navigate = useNavigate()
 
     const [user,setUser] = useState({
         name:"",

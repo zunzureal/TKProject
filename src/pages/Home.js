@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
 
 
     const [users,setUsers] = useState([])
-    const {id} = useParams()
+    //const {id} = useParams()
     
     useEffect(()=> {
         loadUsers();
@@ -28,10 +28,9 @@ export default function Home() {
             <table className="table border shadow">
                 <thead>
                     <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Username</th>
-                    <th scope="col">Email</th>
+                    <th scope="col">Task Number</th>
+                    <th scope='col'>Tasklist</th>
+                    <th scope='col'>Date</th>
                     <th scope='col'>Action</th>
                     </tr>
                 </thead>
@@ -42,9 +41,8 @@ export default function Home() {
                                 <th scope="row" key={index}>
                                     {index + 1}
                                 </th>
-                                <td>{user.name}</td>
-                                <td>{user.username}</td>
-                                <td>{user.email}</td>
+                                <td>{user.tasklist}</td>
+                                <td>{user.date}</td>
                                 <td>
                                     <Link className='btn btn-primary mx-2' to={`/viewuser/${user.id}`}>View</Link>
                                     <Link className='btn btn-outline-primary mx-2' to={`/edituser/${user.id}`}>Edit</Link>
